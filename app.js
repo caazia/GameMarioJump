@@ -1,5 +1,7 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+
+const audioStart = document.querySelector('.audioStart');
 const audioJump = document.querySelector('.audioJump');
 const audioGameOver = document.querySelector('.audioGameOver');
 const textStart = document.querySelector('#text-start');
@@ -20,6 +22,8 @@ const loop = setInterval(() => {
 
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+    audioStart.volume = 0.1;
+    audioStart.play();
 
     if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
         pipe.style.animation = 'none'
@@ -32,11 +36,14 @@ const loop = setInterval(() => {
         mario.style.width= '75px';
         mario.style.marginLeft = '50px';
 
+        audioStart.pause();
+        audioStart.currentTime= 0;
+
         audioGameOver.currentTime = 0.1;
         audioGameOver.volume = 0.2;
         audioGameOver.play();
 
-        document.getElementById("text-start").style.color = "black";
+        document.getElementById("text-start").style.color = "red";
         document.getElementById("text-start").innerHTML = "<strong>GAME OVER 😥</strong>";
 
         clearInterval(loop);
