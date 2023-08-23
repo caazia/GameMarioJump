@@ -11,6 +11,40 @@ p {
     color: #333;
 }
 
+.btn-restart {
+    background: #008000;
+    color: #f8f8f8;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    padding: 1rem;
+    position: absolute;
+    right: 15vw;
+    top: 60vh;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.btn-start {
+    background: #008000;
+    color: #f8f8f8;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+    padding: 1rem;
+    position: absolute;
+    right: 85vw;
+    top: 60vh;
+    cursor: pointer;
+    z-index: 1;
+}
+
+button:hover {
+    border: 2px solid #008000;
+    background: none;
+    color: #008000;
+}
+
 .game-board {
     width: 100vw;
     height: 500px;
@@ -48,6 +82,7 @@ p {
     from {
         right: -80px;
     }
+
     to {
         right: 100%;
     }
@@ -57,15 +92,19 @@ p {
     0% {
         bottom: 0;
     }
+
     40% {
         bottom: 180px;
     }
+
     50% {
         bottom: 180px;
     }
+
     60% {
         bottom: 180px;
     }
+
     100% {
         bottom: 0;
     }
@@ -75,6 +114,7 @@ p {
     from {
         right: -550px;
     }
+
     to {
         right: 100%;
     }
